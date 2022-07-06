@@ -63,7 +63,7 @@ export function caesarCipher(str) {
       if (checkForZ(str[i])) {
         text += String.fromCharCode(str[i].charCodeAt() - 25);
       } else {
-        text += String.fromCharCode(str.charCodeAt(i) - 1);
+        text += String.fromCharCode(str.charCodeAt(i) + 1);
       }
     } else {
       text += String.fromCharCode(str.charCodeAt(i));
@@ -72,6 +72,31 @@ export function caesarCipher(str) {
   return text;
 }
 
-let result = caesarCipher('Z');
+function arrAverage(arr) {
+  return arr.reduce((a, b) => a + b, 0) / arr.length;
+}
+
+function arrMax(arr) {
+  return Math.max(...arr);
+}
+
+function arrMin(arr) {
+  return Math.min(...arr);
+}
+
+function arrLength(arr) {
+  return arr.length;
+}
+
+export function analyzeArray(arr) {
+  return {
+    average: arrAverage(arr),
+    min: arrMin(arr),
+    max: arrMax(arr),
+    length: arrLength(arr),
+  };
+}
+
+let result = analyzeArray([1, 8, 3, 4, 2, 6]);
 
 console.log(result);
