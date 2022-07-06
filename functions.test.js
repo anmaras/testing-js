@@ -1,4 +1,10 @@
-import { sum, capitalize, reverseStr, calculator } from './functions';
+import {
+  sum,
+  capitalize,
+  reverseStr,
+  calculator,
+  caesarCipher,
+} from './functions';
 
 test('two plus two is four', () => {
   expect(sum(1, 1)).toBe(2);
@@ -15,12 +21,19 @@ test('string return reversed', () => {
 test('one plus one is two', () => {
   expect(calculator.add(1, 1)).toBe(2);
 });
+
 test('one minus one is zero', () => {
   expect(calculator.subtract(1, 1)).toBe(0);
 });
+
 test('one divided by one is 1', () => {
   expect(calculator.divide(1, 1)).toBe(1);
 });
-test('tho multiply by six is twelve', () => {
+
+test('two multiply by six is twelve', () => {
   expect(calculator.multiply(2, 6)).toBe(12);
+});
+
+test('a returns b', () => {
+  expect(caesarCipher('a')).toBe('b');
 });
