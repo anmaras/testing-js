@@ -1,5 +1,9 @@
 import reverseStr from './reverseString';
 
-test('string return reversed', () => {
-  expect(reverseStr('nikos')).toBe('sokin');
+test('return a string reversed', () => {
+  expect(reverseStr('love')).toBe('evol');
+});
+
+test('return a number reversed', () => {
+  expect(reverseStr(123)).toBe(321);
 });
