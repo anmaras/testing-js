@@ -6,6 +6,10 @@ test('array item is not a number', () => {
   );
 });
 
+test('array cant be empty', () => {
+  expect(analyzeArray([])).toBe('array is empty');
+});
+
 test('return object with properties', () => {
   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
     average: 4,

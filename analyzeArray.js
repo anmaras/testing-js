@@ -14,7 +14,19 @@ function arrLength(arr) {
   return arr.length;
 }
 
-export function analyzeArray(arr) {
+function checkArrayItem(arr) {
+  return !arr.every((ele) => typeof ele === 'number');
+}
+
+export default function analyzeArray(arr) {
+  arr = arr.flat(3);
+
+  if (checkArrayItem(arr)) {
+    return 'array items are not numbers';
+  }
+  if (!arrLength(arr)) {
+    return 'array is empty';
+  }
   return {
     average: arrAverage(arr),
     min: arrMin(arr),
